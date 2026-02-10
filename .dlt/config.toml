@@ -1,0 +1,21 @@
+[schema]
+naming = "sql_ci_v1"
+
+[runtime]
+log_level="CRITICAL"
+dlthub_telemetry = true
+
+[extract]
+workers=6
+
+[extract.data_writer]
+file_max_bytes = 200000000
+
+[normalize]
+workers = 6
+
+[normalize.data_writer]
+file_max_bytes = 200000000
+
+[load]
+workers = 6
