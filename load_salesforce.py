@@ -27,7 +27,7 @@ pendulum.instance = _patched_instance
 # Configuration
 # ---------------------------------------------------------------------------
 
-BASE_URL = "https://projuventute.my.salesforce.com"
+BASE_URL = "https://<salesforce org>.my.salesforce.com"
 API_VERSION = "v63.0"
 
 SALESFORCE_OBJECTS: list[dict[str, str]] = [
@@ -698,3 +698,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     load_salesforce(objects=args.objects or None, full_load=args.full, downstream_task=args.task)
+
