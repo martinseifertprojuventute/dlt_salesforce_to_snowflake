@@ -1,0 +1,23 @@
+spec:
+  containers:
+    - name: load-salesforce
+      image: <snowflake org>.registry.snowflakecomputing.com/meta/load/image_repo/load_salesforce:latest
+      args: ["--task", "RAW.SALESFORCE.TA_DOWNSTREAM_TASK"]
+      resources:
+        requests:
+          cpu: 0.5      # at least half a vCPU
+          memory: 1G    # at least 1 GiB
+        limits:
+          cpu: 6        # allow 6 vCPUs
+          memory: 58G    # allow more RAM if needed (<= 6G for XS node, <= 58G for HIGHMEM_S node)
+
+  platformMonitor:
+    metricConfig:
+      groups:
+        - system        # CPU/memory, etc.
+        # - network
+        # - storage
+
+  logExporters:
+    eventTableConfig:
+      logLevel: INFO    # INFO | ERROR | NONE
