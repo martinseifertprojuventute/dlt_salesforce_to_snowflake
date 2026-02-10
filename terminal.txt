@@ -2,8 +2,9 @@ docker build --platform=linux/amd64 -t mse/load_salesforce:latest .
 
 docker run mse/load_salesforce:latest
 
-docker tag mse/load_salesforce:latest owhiowe-pj-dlh.registry.snowflakecomputing.com/meta/load/image_repo/load_salesforce:latest
+docker tag mse/load_salesforce:latest <snowflake org>.registry.snowflakecomputing.com/meta/load/image_repo/load_salesforce:latest
 
 snow spcs image-registry login --connection sysadmin
 
-docker push owhiowe-pj-dlh.registry.snowflakecomputing.com/meta/load/image_repo/load_salesforce:latest
+
+docker push <snowflake org>.registry.snowflakecomputing.com/meta/load/image_repo/load_salesforce:latest
