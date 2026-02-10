@@ -1,0 +1,5 @@
+dlt[snowflake]
+dlt[parquet]
+requests
+snowflake-connector-python
+cryptography
